@@ -15,6 +15,7 @@ using std::ostream;
 /* PUBLIC MEMBER FUNCTIONS
  ********************************/
 
+//Constructor, tamaño de celdas y columnas como parametro
 Matrix::Matrix(int rows, int cols) : rows_(rows), cols_(cols)
 {
     allocSpace();
@@ -27,7 +28,8 @@ Matrix::Matrix(int rows, int cols) : rows_(rows), cols_(cols)
     }
 }
 
-Matrix::Matrix(double **a, int rows, int cols) : rows_(rows), cols_(cols)
+//Constructor, inicializar matriz desde otra
+Matrix::Matrix(double** a, int rows, int cols) : rows_(rows), cols_(cols)
 {
     allocSpace();
     for (int i = 0; i < rows_; ++i)
@@ -39,6 +41,7 @@ Matrix::Matrix(double **a, int rows, int cols) : rows_(rows), cols_(cols)
     }
 }
 
+//Constructor, matriz de 1 x 1
 Matrix::Matrix() : rows_(1), cols_(1)
 {
     allocSpace();
@@ -54,7 +57,8 @@ Matrix::~Matrix()
     delete[] p;
 }
 
-Matrix::Matrix(const Matrix &m) : rows_(m.rows_), cols_(m.cols_)
+//Constructor creada desde otra
+Matrix::Matrix(const Matrix& m) : rows_(m.rows_), cols_(m.cols_)
 {
     allocSpace();
     for (int i = 0; i < rows_; ++i)
@@ -180,6 +184,7 @@ void Matrix::swapRows(int r1, int r2)
     p[r2] = temp;
 }
 
+//transpuesta de la matriz
 Matrix Matrix::transpose()
 {
     Matrix ret(cols_, rows_);
