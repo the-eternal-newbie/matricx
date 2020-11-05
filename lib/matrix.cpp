@@ -159,6 +159,7 @@ void Matrix::swapRows(int r1, int r2)
     p[r2] = temp;
 }
 
+//transpuesta de la matriz
 Matrix Matrix::transpose()
 {
     Matrix ret(cols_, rows_);
