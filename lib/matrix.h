@@ -13,8 +13,8 @@ public:
     Matrix();
     ~Matrix();
     Matrix(const Matrix &);
-    Matrix(double **, int, int);
-    Matrix(int rows=2, int columns=2);
+    Matrix(double ** a, int rows=1, int columns=1);
+    Matrix(int rows=1, int columns=1);
     Matrix &operator=(const Matrix &);
 
     inline double &operator()(int x, int y) { return p[x][y]; }
