@@ -273,7 +273,7 @@ double Matrix::dotProduct(Matrix a, Matrix b)
     return sum;
 }
 
-// functions on AUGMENTED matrices
+// Funcion de la matriz aumentada
 Matrix Matrix::augment(Matrix A, Matrix B)
 {
     Matrix AB(A.rows_, A.cols_ + B.cols_);
