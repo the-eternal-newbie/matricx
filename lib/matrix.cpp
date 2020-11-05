@@ -431,7 +431,7 @@ void Matrix::readSolutionsFromRREF(ostream& os)
         Matrix particular(cols_ - 1, 1);
         Matrix special(cols_ - 1, 1);
 
-        for (int i = 0; i < rows_; ++i) {
+        for (i = 0; i < rows_; ++i) {
             bool pivotFound = false;
             bool specialCreated = false;
             for (int j = 0; j < cols_ - 1; ++j) {
