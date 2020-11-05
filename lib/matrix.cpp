@@ -455,6 +455,8 @@ void Matrix::readSolutionsFromRREF(ostream& os)
     }
 }
 
+
+//Matriz invertida
 Matrix Matrix::inverse()
 {
     Matrix I = Matrix::createIdentity(rows_);
