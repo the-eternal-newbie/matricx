@@ -234,7 +234,7 @@ Matrix Matrix::bandSolve(Matrix A, Matrix b, int k)
             throw domain_error("Error: the coefficient matrix has 0 as a pivot. Please fix the input and try again.");
         }
         for (int j = i + 1; j < A.rows_ && j <= i + bandsBelow; ++j) {
-            int k = i + 1;
+            k = i + 1;
             while (k < A.cols_ && A.p[j][k]) {
                 A.p[j][k] -= A.p[i][k] * (A.p[j][i] / A.p[i][i]);
                 k++;
@@ -378,7 +378,7 @@ Matrix Matrix::rowReduceFromGaussian()
             }
 
             // divide row by pivot
-            for (int k = j + 1; k < cols; ++k) {
+            for (k = j + 1; k < cols; ++k) {
                 R(i, k) = R(i, k) / R(i, j);
                 if (R(i, k) < EPS && R(i, k) > -1*EPS)
                     R(i, k) = 0;
