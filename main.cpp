@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include "lib/matrix.h"
 
 int main(void)
 {
-    printf("Hello! This is a test prgoram.\n");
+    Matrix mtx_1(2, 2), mtx_2(5, 5);
     return 0;
 }

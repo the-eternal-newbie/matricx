@@ -10,11 +10,11 @@
 class Matrix
 {
 public:
-    Matrix(int, int);
-    Matrix(double **, int, int);
     Matrix();
     ~Matrix();
     Matrix(const Matrix &);
+    Matrix(double **, int, int);
+    Matrix(int rows=2, int columns=2);
     Matrix &operator=(const Matrix &);
 
     inline double &operator()(int x, int y) { return p[x][y]; }
