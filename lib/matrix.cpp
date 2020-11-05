@@ -57,6 +57,7 @@ Matrix::Matrix(const Matrix& m) : rows_(m.rows_), cols_(m.cols_)
     }
 }
 
+// Operador de asignación
 Matrix& Matrix::operator=(const Matrix& m)
 {
     if (this == &m) {
@@ -82,6 +83,7 @@ Matrix& Matrix::operator=(const Matrix& m)
     return *this;
 }
 
+// Operación incremental
 Matrix& Matrix::operator+=(const Matrix& m)
 {
     for (int i = 0; i < rows_; ++i) {
@@ -92,6 +94,7 @@ Matrix& Matrix::operator+=(const Matrix& m)
     return *this;
 }
 
+// Operación decremental
 Matrix& Matrix::operator-=(const Matrix& m)
 {
     for (int i = 0; i < rows_; ++i) {
@@ -102,6 +105,7 @@ Matrix& Matrix::operator-=(const Matrix& m)
     return *this;
 }
 
+// Operador para multiplicar matrices
 Matrix& Matrix::operator*=(const Matrix& m)
 {
     Matrix temp(rows_, m.cols_);
@@ -115,6 +119,7 @@ Matrix& Matrix::operator*=(const Matrix& m)
     return (*this = temp);
 }
 
+// Operador para multiplicar
 Matrix& Matrix::operator*=(double num)
 {
     for (int i = 0; i < rows_; ++i) {
@@ -125,6 +130,7 @@ Matrix& Matrix::operator*=(double num)
     return *this;
 }
 
+// Operador para realizar una división
 Matrix& Matrix::operator/=(double num)
 {
     for (int i = 0; i < rows_; ++i) {
@@ -135,6 +141,7 @@ Matrix& Matrix::operator/=(double num)
     return *this;
 }
 
+// Operador de potencias
 Matrix Matrix::operator^(int num)
 {
     Matrix temp(*this);
