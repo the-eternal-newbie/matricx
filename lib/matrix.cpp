@@ -13,6 +13,7 @@ using std::domain_error;
 /* PUBLIC MEMBER FUNCTIONS
  ********************************/
 
+//Constructor, tamaño de celdas y columnas como parametro
 Matrix::Matrix(int rows, int cols) : rows_(rows), cols_(cols)
 {
     allocSpace();
@@ -23,6 +24,7 @@ Matrix::Matrix(int rows, int cols) : rows_(rows), cols_(cols)
     }
 }
 
+//Constructor, inicializar matriz desde otra
 Matrix::Matrix(double** a, int rows, int cols) : rows_(rows), cols_(cols)
 {
     allocSpace();
@@ -33,6 +35,7 @@ Matrix::Matrix(double** a, int rows, int cols) : rows_(rows), cols_(cols)
     }
 }
 
+//Constructor, matriz de 1 x 1
 Matrix::Matrix() : rows_(1), cols_(1)
 {
     allocSpace();
@@ -47,6 +50,7 @@ Matrix::~Matrix()
     delete[] p;
 }
 
+//Constructor creada desde otra
 Matrix::Matrix(const Matrix& m) : rows_(m.rows_), cols_(m.cols_)
 {
     allocSpace();
