@@ -306,17 +306,6 @@ Matrix Matrix::bandSolve(Matrix A, Matrix b, int k)
     return x;
 }
 
-// functions on VECTORS
-double Matrix::dotProduct(Matrix a, Matrix b)
-{
-    double sum = 0;
-    for (int i = 0; i < a.rows_; ++i)
-    {
-        sum += (a(i, 0) * b(i, 0));
-    }
-    return sum;
-}
-
 // Funcion de la matriz aumentada
 Matrix Matrix::augment(Matrix A, Matrix B)
 {
@@ -400,6 +389,17 @@ Matrix Matrix::gaussianEliminate()
     }
 
     return Ab;
+}
+
+// Funcion para producto punto
+double Matrix::dotProduct(Matrix a, Matrix b)
+{
+    double sum = 0;
+    for (int i=0; i < a.rows_; ++i)
+    {
+        sum += (a(i, 0) * b(i, 0));
+    }
+    return sum;
 }
 
 Matrix Matrix::rowReduceFromGaussian()
